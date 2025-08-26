@@ -6,8 +6,44 @@
 
 }
 
-.start-btn{
+.for_image{
     position: relative;
     width: 906px;
     height: 510px;
+    left: 287px;
+    top: 53px;
+}
+
+.start-btn{
+    position: relative;
+    left: 550px;
+    top: 578px;
+    width: 380px;
+    height: 143px;
+}
+
+.answers button.correct {
+    background: #228B22;
+    border-color: #32CD32;
+    animation: correctPulse 1s ease;
+  }
+  
+@keyframes correctPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0px #32CD32; }
+    50% { transform: scale(1.08); box-shadow: 0 0 20px #32CD32; }
+    100% { transform: scale(1); box-shadow: 0 0 0px #32CD32; }
+}
+  
+.answers button.wrong {
+    background: #8B0000; 
+    border-color: #FF4500;
+    animation: wrongShake 0.5s ease;
+}
+  
+@keyframes wrongShake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-6px); }
+    100% { transform: translateX(0); }
 }
