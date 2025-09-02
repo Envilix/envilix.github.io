@@ -1,9 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+body {
+    background-color: ##2E3E67;
+}  
+
+.heads {
+    position: relative;
+    width: 1440px;
+    height: 73px;
+    background-color: #1D1932;
+}
+
+.logo {
+    top: 14px;
+    height: 45px;
+    width: 180px;
+    left: 232px;
+}
+
+.pic_logo {
+    height: 45px;
+    width: 58px;
+    top: 14px;
+    left: 232px;
+}
+
+.pocetna{
+    position: absolute;
+    color: #ffffff;
+    font-size: 24px;
+    left: 888px;
+    top: 0px;
+}
+
+.pocetna:hover{
+    color: gray;
+}
+
+.info{
+    position: absolute;
+    color: #ffffff;
+    font-size: 24px;
+    left: 1050px;
+    top: 0px;
+}
+
+.info:hover{
+    color: gray;
+}
+
+.kontakt{
+    position: absolute;
+    color: #ffffff;
+    font-size: 24px;
+    left: 1174px;
+    top: 0px;
+}
+
+.kontakt:hover{
+    color: gray;
+}
+
+.gear{
+    position: absolute;
+    left: 1350px;
+    top: 20px;
+    width: 36.849998474121094px;
+    height: 36.66666793823242px;
+}
+
+.pic{
+
+}
+
+.container_wrong{
+
+}
+
+.meni_btn{
+
+}
+
+.thanks{
+
+}
+
+.container_end{
+
+}
+
+.choice{
+
+}
+
+.award{
+
+}
+
+.container_correct{
+
+}
+
+.answer{
+
+}
+
+.ans-row{
+
+}
+
+.main-question{
+
+}
+
+.sum{
+
+}
+
+.container_questions{
+
+}
+
 .container_start{
     
 }
 
 .container_h3{
-
+    left: 596px;
+    top: 601px;
+    width: 288px;
+    height: 96px;
 }
 
 .for_image{
@@ -15,11 +141,23 @@
 }
 
 .start-btn{
-    position: relative;
-    left: 550px;
-    top: 578px;
+    text-align: center;
+    position: absolute;
+    left: 570px;
+    top: 500px;
     width: 380px;
     height: 143px;
+    font-family: 'Karla', sans-serif;
+    font-size: 96px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 50px;
+    background-color: #32CD32;
+}
+
+.start-btn:hover{
+    background-color: #228B22;
 }
 
 .answers button.correct {
