@@ -1,3 +1,4 @@
+// === Select DOM elements ===
 const startContainer = document.querySelector(".container.start");
 const questionContainer = document.querySelector(".container.questions");
 const correctContainer = document.querySelector(".container.correct");
@@ -12,30 +13,32 @@ const awardField = document.querySelector(".award");
 let currentIndex = 0;
 let shuffledQuestions = [];
 
+// === Question class (yours, with shuffle inside display) ===
 class Question {
-    constructor(question,answer_1,answer_2,correct,answer_4) {
-        this.question = question
-        this.correct = correct
+    constructor(question, answer_1, answer_2, correct, answer_4) {
+        this.question = question;
+        this.correct = correct;
         this.answers = [
             answer_1,
             answer_2,
             this.correct,
             answer_4
-           
-        ]
+        ];
     }
 
-
-    display () {
-        question_field.innerHTML = this.question
-        for (let i = 0; i < this.answers.length; i += 1) {
-            answer_buttons[i].innerHTML = this.answers[i]
+    display() {
+        question_field.innerHTML = this.question;
+        // shuffle answers for randomness
+        let shuffled = this.answers.sort(() => Math.random() - 0.5);
+        for (let i = 0; i < shuffled.length; i++) {
+            answer_buttons[i].innerHTML = shuffled[i];
+            answer_buttons[i].dataset.correct = (shuffled[i] === this.correct);
         }
     }
 }
 
-
-current_questions = [
+// === Your questions ===
+let current_questions = [
     new Question("Koji je glavni grad Bosne i Hercegovine?", "Zagreb", "Beograd", "Sarajevo", "Mostar"),
     new Question("Koliko ima kontinenata na svijetu?", "5", "6", "7", "8"),
     new Question("Koja životinja je poznata kao 'kralj džungle'?", "Tigar", "Slon", "Lav", "Leopard"),
@@ -54,25 +57,30 @@ current_questions = [
     new Question("Koji je najbrži kopneni sisar?", "Konj", "Antilopa", "Gepard", "Lav"),
     new Question("Koji slavni naučnik je formulirao teoriju relativnosti?", "Nikola Tesla", "Isaac Newton", "Albert Einstein", "Galileo Galilei"),
     new Question("Koji je hemijski element sa simbolom 'Au'?", "Srebro", "Aluminij", "Zlato", "Bakar"),
-    new Question("Koliko konj ima 4 noge?", "3", "4","Cijeli život", "5"),
-]
+    new Question("Koliko konj ima 4 noge?", "3", "4", "Cijeli život", "5"),
+];
 
+// === Utility to hide all containers ===
 function hideAll() {
     [startContainer, questionContainer, correctContainer, wrongContainer, endContainer]
         .forEach(c => c.style.display = "none");
 }
 
-
+// === Start the game ===
 startBtn.addEventListener("click", () => {
     shuffledQuestions = [...current_questions].sort(() => Math.random() - 0.5);
     currentIndex = 0;
     showQuestion();
 });
+
+// === Show a question ===
 function showQuestion() {
     hideAll();
     questionContainer.style.display = "block";
     shuffledQuestions[currentIndex].display();
 }
+
+// === Handle answer clicks ===
 answer_buttons.forEach(btn => {
     btn.addEventListener("click", () => {
         const isCorrect = btn.dataset.correct === "true";
@@ -83,6 +91,7 @@ answer_buttons.forEach(btn => {
         }
     });
 });
+
 function showCorrect() {
     hideAll();
     correctContainer.style.display = "block";
@@ -100,6 +109,7 @@ function showCorrect() {
     // Odustani → kraj igre
     correctContainer.querySelectorAll(".choice-btn")[1].onclick = showEnd;
 }
+
 function showWrong() {
     hideAll();
     wrongContainer.style.display = "block";
@@ -108,6 +118,7 @@ function showWrong() {
         startContainer.style.display = "block";
     };
 }
+
 function showEnd() {
     hideAll();
     endContainer.style.display = "block";
@@ -120,30 +131,3 @@ function showEnd() {
 // === Init ===
 hideAll();
 startContainer.style.display = "block";
-
-let timerInterval;
-let seconds = 0;
-let minutes = 0;
-let isRunning = false;
-
-function updateDisplay() {
-    document.getElementById('seconds').textContent = String(seconds).padStart(2, "0");
-    document.getElementById('minutes').textContent = String(minutes).padStart(2, "0");
-}
-
-function startTimer() {
-    if (!isRunning) {
-        isRunning = true;
-        timerInterval = setInterval();
-            seconds ++;
-            if (seconds === 60) {
-                seconds = 0;
-                minutes++;
-            }
-            if (minutes === 5) {
-                showWrong()
-            }
-        }
-        updateDisplay();
-    }
-}
