@@ -1,73 +1,49 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-    </style>
     <title>Kviz</title>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <meta charset="UTF-8">
+
   </head>
   <body>
 
+<!-- header-->
+    <header class = 'heads'>
+      <div class = 'logo'>
+        <div class = 'pic_logo'><img scr="b.png"></div>
+      </div>
+      <div class = 'pocetna'><p>Pocetna</p></div>
+      <div class = 'info'><p>Info</p></div>
+      <div class = 'kontakt'><p>Kontakt</p></div>
+      <button class = 'gear'><img scr="gear.png"></button>
+    </header>
 <!-- Start dugme-->
     <div class = 'container start'> 
-      <div class = "logo"> <img src = "bilijunas.png"> </div>
+      <div class = 'pic'> <img src = "Milijunas.png"> </div>
       <h3 class = 'container_h3'> Qviz </h3>
       <div class = 'start-btn'> Start </div>
     </div>
 
-<!-- kontejner sa pitanjima1-->
-    <div class="container questions1">
+<!-- kontejner sa pitanjima-->
+    <div class="container questions">
       <div class="sum">Pitanje za 50$</div>
-      <div class="japan"> <img src = "japan.png"> </div>
       <div class="main-question">Koji je glavni grad Japana</div>
-      <div class="ans-coloumn1">
-          <div class="answer1">Sarajevo</div>
-          <div class="answer1">Berlin</div>
-          <div class="answer1">Tokio</div>
-          <div class="answer1">Pariz</div>
+      <div class="ans-row">
+          <div class="answer">Sarajevo</div>
+          <div class="answer">Berlin</div>
+          <div class="answer">Tokio</div>
+          <div class="answer">Pariz</div>
       </div>
     </div>
 
-<!-- kontejner sa tajmerom-->
-
-    <div class="timer-container">
-      <div class="timer-display">
-        <span id="seconds" class="timer-digit">00</span>
-        <span id="minutes" class="timer-digit">00</span>
-      </div>
-    </div>
-
-<!-- kontejner sa pitanjima2-->
-    <div class="container questions2">
-      <div class="sum">Pitanje za 100$</div>
-      <div class="japan"> <img src = "konji.png"> </div>
-      <div class="main-question">Koliko konj ima 4 noge?</div>
-      <div class="ans-coloumn2">
-          <div class="answer2">4</div>
-          <div class="answer2">Cijeli zivot</div>
-          <div class="answer2">5</div>
-          <div class="answer2">3</div>
-      </div>
-    </div>
-
-<!-- kontejner sa dobijenom sumom posle prvog tacnog odg, odustani nastavi dgm-->
-    <div class="container correct1">
-      <div class="award1">Cestitamo, dobili ste 50$</div>
-      <div class="choice1">
-        <div class="choice-btn1">Nastavi</div>
-        <div class="choice-btn1">Odustani</div>
-      </div>
-    </div>
-
-<!-- kontejner sa dobijenom sumom posle prvog tacnog odg, odustani nastavi dgm-->
-    <div class="container correct2">
-      <div class="award2">Cestitamo, dobili ste 100$</div>
-      <div class="choice2">
-        <div class="choice-btn2">Nastavi</div>
-        <div class="choice-btn2">Odustani</div>
+<!-- kontejner sa dobijenom sumom posle tacnog odg, odustani nastavi dgm-->
+    <div class="container correct">
+      <div class="award">Dobili ste 50$</div>
+      <div class="choice">
+        <div class="choice-btn">Nastavi</div>
+        <div class="choice-btn">Odustani</div>
       </div>
     </div>
 
@@ -83,5 +59,5 @@
       <div class="meni_btn">Meni</div>
     </div>
 
-  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'978f59fd1b1d0db0',t:'MTc1Njg0MDY4OA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97c8b7cf6bdd1778',t:'MTc1NzQ0MjIxOQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </body>
 </html>
