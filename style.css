@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
-
 body {
     background-color: #2E3E67;
     font-family: 'Karla', sans-serif;
@@ -7,25 +5,6 @@ body {
     padding: 0;
     color: #fff;
 }  
-
-.timer-container {
-    display: flex;
-    justify-content: center;
-    background-color: #f0f0f0;
-}
-
-.timer-display {
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 4em;
-    color: #333;
-    background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 /* --- Header --- */
 .heads {
@@ -69,140 +48,7 @@ body {
     border: none;
 }
 
-body {
-    background-color: ##2E3E67;
-}  
-
-.pocetna{
-    position: absolute;
-    color: #ffffff;
-    font-size: 24px;
-    left: 888px;
-    top: 0px;
-}
-
-.info{
-    position: absolute;
-    color: #ffffff;
-    font-size: 24px;
-    left: 1050px;
-    top: 0px;
-}
-
-.kontakt{
-    position: absolute;
-    color: #ffffff;
-    font-size: 24px;
-    left: 1174px;
-    top: 0px;
-}
-
-.gear{
-    position: absolute;
-    left: 1350px;
-    top: 20px;
-    width: 36.849998474121094px;
-    height: 36.66666793823242px;
-}
-
-.pic{
-
-}
-
-.container_wrong{
-
-}
-
-.meni_btn {
-    padding: 15px 40px;
-    background: #1D1932;
-    border: 2px solid #fff;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background 0.3s;
-    display: inline-block;
-}
-
-.meni_btn:hover {
-    background: #444;
-}
-
-.thanks {
-    font-size: 26px;
-    margin-bottom: 20px;
-}
-
-.container.end, 
-.container.wrong {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.choice-btn {
-    padding: 15px 40px;
-    background: #1D1932;
-    border: 2px solid #fff;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.choice-btn:hover {
-    background: #444;
-}
-
-.choice {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.award {
-    font-size: 26px;
-    margin-bottom: 20px;
-}
-
-.container.correct {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.answer {
-    background: #444;
-    padding: 15px;
-    border-radius: 10px;
-    border: 2px solid #fff;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.answer:hover {
-    background: #666;
-}
-
-.ans-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.main-question {
-    font-size: 28px;
-    margin-bottom: 30px;
-}
-
-.sum {
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-
-.container.questions {
-    text-align: center;
-    margin-top: 50px;
-}
-
+/* --- Start screen --- */
 .container.start {
     text-align: center;
     margin-top: 50px;
@@ -216,14 +62,6 @@ body {
 .container_h3 {
     font-size: 32px;
     margin-top: 20px;
-}
-
-.for_image{
-    position: relative;
-    width: 906px;
-    height: 510px;
-    left: 287px;
-    top: 53px;
 }
 
 .start-btn {
@@ -242,6 +80,100 @@ body {
     background-color: #228B22;
 }
 
+/* --- Question screen --- */
+.container.questions {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.sum {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.main-question {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+.ans-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.answer {
+    background: #444;
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.answer:hover {
+    background: #666;
+}
+
+/* --- Correct screen --- */
+.container.correct {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.award {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.choice {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.choice-btn {
+    padding: 15px 40px;
+    background: #1D1932;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.choice-btn:hover {
+    background: #444;
+}
+
+/* --- End & Wrong screens --- */
+.container.end, 
+.container.wrong {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.thanks {
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.meni_btn {
+    padding: 15px 40px;
+    background: #1D1932;
+    border: 2px solid #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-block;
+}
+
+.meni_btn:hover {
+    background: #444;
+}
+
+/* --- Answer feedback animations --- */
 .answers button.correct {
     background: #228B22;
     border-color: #32CD32;
