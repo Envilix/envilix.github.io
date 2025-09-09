@@ -120,3 +120,30 @@ function showEnd() {
 // === Init ===
 hideAll();
 startContainer.style.display = "block";
+
+let timerInterval;
+let seconds = 0;
+let minutes = 0;
+let isRunning = false;
+
+function updateDisplay() {
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, "0");
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, "0");
+}
+
+function startTimer() {
+    if (!isRunning) {
+        isRunning = true;
+        timerInterval = setInterval();
+            seconds ++;
+            if (seconds === 60) {
+                seconds = 0;
+                minutes++;
+            }
+            if (minutes === 5) {
+                showWrong()
+            }
+        }
+        updateDisplay();
+    }
+}
