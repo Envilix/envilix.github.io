@@ -152,6 +152,7 @@ body {
     background: #444;
     padding: 15px;
     border-radius: 10px;
+    border: 2px solid #fff;
     cursor: pointer;
     transition: background 0.3s;
 }
