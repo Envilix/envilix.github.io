@@ -1,3 +1,17 @@
+const startContainer = document.querySelector(".container.start");
+const questionContainer = document.querySelector(".container.questions");
+const correctContainer = document.querySelector(".container.correct");
+const wrongContainer = document.querySelector(".container.wrong");
+const endContainer = document.querySelector(".container.end");
+
+const startBtn = document.querySelector(".start-btn");
+const question_field = document.querySelector(".main-question");
+const answer_buttons = document.querySelectorAll(".answer");
+const awardField = document.querySelector(".award");
+
+let currentIndex = 0;
+let shuffledQuestions = [];
+
 class Question {
     constructor(question,answer_1,answer_2,correct,answer_4) {
         this.question = question
@@ -42,3 +56,67 @@ current_questions = [
     new Question("Koji je hemijski element sa simbolom 'Au'?", "Srebro", "Aluminij", "Zlato", "Bakar"),
     new Question("Koliko konj ima 4 noge?", "3", "4","Cijeli život", "5"),
 ]
+
+function hideAll() {
+    [startContainer, questionContainer, correctContainer, wrongContainer, endContainer]
+        .forEach(c => c.style.display = "none");
+}
+
+
+startBtn.addEventListener("click", () => {
+    shuffledQuestions = [...current_questions].sort(() => Math.random() - 0.5);
+    currentIndex = 0;
+    showQuestion();
+});
+function showQuestion() {
+    hideAll();
+    questionContainer.style.display = "block";
+    shuffledQuestions[currentIndex].display();
+}
+answer_buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const isCorrect = btn.dataset.correct === "true";
+        if (isCorrect) {
+            showCorrect();
+        } else {
+            showWrong();
+        }
+    });
+});
+function showCorrect() {
+    hideAll();
+    correctContainer.style.display = "block";
+    awardField.innerHTML = `Dobili ste ${ (currentIndex+1) * 50 }$`;
+
+    // Nastavi → sljedeće pitanje
+    correctContainer.querySelectorAll(".choice-btn")[0].onclick = () => {
+        currentIndex++;
+        if (currentIndex < shuffledQuestions.length) {
+            showQuestion();
+        } else {
+            showEnd();
+        }
+    };
+    // Odustani → kraj igre
+    correctContainer.querySelectorAll(".choice-btn")[1].onclick = showEnd;
+}
+function showWrong() {
+    hideAll();
+    wrongContainer.style.display = "block";
+    wrongContainer.querySelector(".meni_btn").onclick = () => {
+        hideAll();
+        startContainer.style.display = "block";
+    };
+}
+function showEnd() {
+    hideAll();
+    endContainer.style.display = "block";
+    endContainer.querySelector(".meni_btn").onclick = () => {
+        hideAll();
+        startContainer.style.display = "block";
+    };
+}
+
+// === Init ===
+hideAll();
+startContainer.style.display = "block";
