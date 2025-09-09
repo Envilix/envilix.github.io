@@ -8,6 +8,25 @@ body {
     color: #fff;
 }  
 
+.timer-container {
+    display: flex;
+    justify-content: center;
+    background-color: #f0f0f0;
+}
+
+.timer-display {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 4em;
+    color: #333;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* --- Header --- */
 .heads {
     position: relative;
