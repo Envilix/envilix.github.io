@@ -76,6 +76,84 @@ body {
     transition: background 0.3s;
 }
 
+.start-btn {
+    margin: 40px auto;
+    display: inline-block;
+    padding: 20px 60px;
+    font-size: 36px;
+    border: 2px solid black;
+    border-radius: 50px;
+    background-color: #32CD32;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.start-btn span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.start-btn:before,
+.start-btn:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    bottom: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+    -7px -7px 20px 0px rgba(255,255,255,.9),
+    -4px -4px 5px 0px rgba(255,255,255,.9),
+    7px 7px 20px 0px rgba(0,0,0,.2),
+    4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.start-btn:before{
+    height: 0%;
+    width: 2px;
+}
+.start-btn:after {
+    width: 0%;
+    height: 2px;
+}
+.start-btn:hover{
+    color: rgba(251,75,2,1);
+    background: transparent;
+}
+.start-btn:hover:before {
+    height: 100%;
+}
+.start-btn:hover:after {
+    width: 100%;
+}
+.start-btn span:before,
+.start-btn span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    background: rgba(251,75,2,1);
+    box-shadow:
+    -7px -7px 20px 0px rgba(255,255,255,.9),
+    -4px -4px 5px 0px rgba(255,255,255,.9),
+    7px 7px 20px 0px rgba(0,0,0,.2),
+    4px 4px 5px 0px rgba(0,0,0,.3);
+    transition: all 0.3s ease;
+}
+.start-btn span:before {
+        width: 2px;
+        height: 0%;
+}
+.start-btn span:after {
+        height: 2px;
+        width: 0%;
+}
+.start-btn span:hover:before {
+        height: 100%;
+}
+.start-btn span:hover:after {
+        width: 100%;
+}
+
 .start-btn:hover {
     background-color: #228B22;
 }
@@ -198,4 +276,6 @@ body {
     50% { transform: translateX(6px); }
     75% { transform: translateX(-6px); }
     100% { transform: translateX(0); }
+}
+
 }
